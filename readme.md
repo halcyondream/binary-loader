@@ -1,7 +1,7 @@
 # Binary Loader
 
 Reworking of the “simple binary loader” from *Practical Binary
-Analysis*, chapter 4. The solution lays a solid framework for simple
+Analysis*, chapter 4. Their solution lays a solid framework for simple
 binary loading and how to use a specialized library in order to load the
 content. This solution builds on these efforts by leveraging
 object-oriented design and the C++14 STL.
@@ -22,11 +22,10 @@ basic design; and a BFD loader, which follows the original code solution
 and aspires to capture the “spirit” of that version.
 
 The client code (*demo.cc*) need only be aware of two interfaces: the
-*Binary* and *Loader*. Under the hood, the *Binary* and *BfdLoader*
-implementations encapsulate all data in a *Data* instance. The goal is
-to allow a binary to load, print, or unload, but prohibit any direct
-access to its data members, while at the same time, allowing those
-members to be loaded one time only.
+*Binary* and *Loader*. Further, the *PbaLoader* is meant to be a nearly
+one-to-one impelementation of the BFD solution provided by the book. 
+The design goal was to obfuscate the underlying BFD usage while, at the
+same time, leveraging a more object-oriented loading framework.
 
 # Function changes
 
